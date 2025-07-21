@@ -1,4 +1,4 @@
 defaults:
-  - model: model
+  - model: lr
   - data: data
   - train: train
