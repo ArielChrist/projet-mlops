@@ -1,0 +1,6 @@
+pyproject.toml :
+[project]
+name = "projet mlops"
+version = "0.1.0"
+authors = [{ name = "Ariel NGATO" }]
+description = "Projet mlops pour tester et utiliser les bonnes pratiques du mlops dans un cas d'utilisation pour la prediction des prix de locations d'une maison en fonction des differentes parametres qui influent sur cela"
