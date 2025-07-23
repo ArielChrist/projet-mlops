@@ -1,78 +1,90 @@
-import hydra
-from omegaconf import DictConfig
 import pandas as pd
 import numpy as np
-from category_encoders import OneHotEncoder
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler, OneHotEncoder, make_column_transformer, make_pipeline
 from sklearn.model_selection import train_test_split
 
-def load_data(file_path: str) -> pd.DataFrame:
-    """Load data from a CSV file."""
-    return pd.read_csv(file_path)
-
-def impute_outliers(data, colname): 
-    q1 = np.percentile(data[colname], 25)
-    q3 = np.percentile(data[colname], 75) 
-
-    lower_bound = q1 - 1.5*(q3 - q1)
-    upper_bound = q3 + 1.5*(q3 - q1)
-
-    data.loc[(data[colname] <= lower_bound), colname] = lower_bound
-    data.loc[(data[colname] >= upper_bound), colname] = upper_bound
-
-
-def preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
-    """Preprocess the DataFrame."""
-    df['date'] = pd.to_datetime(df['date'])
-    df['year'] = df['date'].dt.year
-    df['month'] = df['date'].dt.month
-    df['day'] = df['date'].dt.day
-
-    for colname in df.select_dtypes('number').columns:
-        impute_outliers(df, colname)
-
-    df = StandardScaler().fit_transform(df.select_dtypes(include=['float64', 'int64']))
-    df = OneHotEncoder(cols=['city', 'street'], drop_invariant=True).fit_transform(df)
-
-    df_clean = df.drop(columns=['date'])
-
-    return df_clean 
-
-
-def split_data(df: pd.DataFrame, target_column:str, exclude_columns: list, test_size: float, random_state: int) -> list:
+class DataPreprocessor:
     """
-    Divise les données en ensembles d'entraînement et de test.
+    Prétraitement des Données
 
-    Returns:
-    --------
-    X_train, X_test, y_train, y_test : tuple
-        Données divisées en ensembles d'entraînement et de test.
+    • Nettoyage : Imputer les valeurs manquantes.
+    • Encodage des variables catégorielles : Appliquer l’encodage par variables factices (dummy variables)
+      pour les données non numériques.
+    • Standardisation : Standardiser les données numériques pour améliorer les performances des algorithmes.
+    • Livrable : Code et documentation du pipeline de prétraitement des données.
+    Attributes:
+    -----------
+    df : pd.DataFrame
+        Le DataFrame contenant les données à traiter.
+    target_column : str
+        La colonne cible pour le modèle.
+    exclude_columns : list
+        Les colonnes à exclure du prétraitement (par défaut, aucune colonne n'est exclue).
+    test_size : float
+        La proportion de l'ensemble de test (par défaut, 0.2).
+    random_state : int
+        Graine aléatoire pour la reproductibilité du découpage en train/test (par défaut, 0).
     """
-    y = df[target_column]
-    X = df.drop([target_column] + exclude_columns, axis='columns')
-
-    X_train, X_test, y_train, y_test = train_test_split(
-                                X, 
-                                y, 
-                                test_size=test_size, 
-                                random_state=random_state
-                        )
-    return X_train, X_test, y_train, y_test
-
+    
+    def __init__(self, df: pd.DataFrame, target_column: str, exclude_columns=None, test_size: float = 0.2, random_state: int = 0):
+        
+        self.df = df
+        self.target_column = target_column
+        self.exclude_columns = exclude_columns if exclude_columns is not None else []
+        self.test_size = test_size
+        self.random_state = random_state
+        
 
 
+    def split_data(self) -> list:
+        """
+        Divise les données en ensembles d'entraînement et de test.
 
+        Returns:
+        --------
+        X_train, X_test, y_train, y_test : tuple
+            Données divisées en ensembles d'entraînement et de test.
+        """
+        y = self.df[self.target_column]
+        X = self.df.drop([self.target_column] + self.exclude_columns, axis='columns')
+        
+        X_train, X_test, y_train, y_test = train_test_split(
+                                 X, 
+                                 y, 
+                                 test_size=self.test_size, 
+                                 random_state=self.random_state
+                            )
+        return X_train, X_test, y_train, y_test
+        
 
-@hydra.main(config_path="../../configs", config_name="config", version_base=None)
-def main(cfg: DictConfig):
-    print("Configuration utilisees")
-    print(cfg)
+    def create_pipeline(self, X_train):
+        """
+        Crée un pipeline de prétraitement pour les données.
 
-    df = load_data(cfg.data.path)
+        Étapes du pipeline :
+        - Imputation des valeurs manquantes.
+        - Standardisation des colonnes numériques.
+        - Encodage des variables catégorielles avec des variables factices.
 
-    print("Preprocessing data...")
-    df_clean = preprocess_data(df)
-    df_clean.info()
-
-if __name__ == "__main__":
-    main()
+        Parameters:
+        -----------
+        X_train : pd.DataFrame
+            Données d'entraînement pour déterminer les types de colonnes.
+   Returns:
+        --------
+        full_pipeline : ColumnTransformer
+            Pipeline de transformations pour le prétraitement complet des données.
+        """
+        num_cols = X_train.select_dtypes(include=['number']).columns
+        cat_cols = X_train.select_dtypes(include='object').columns
+        num_pipeline = make_pipeline(
+                    StandardScaler(),
+                )
+        cat_pipeline = make_pipeline(
+                    OneHotEncoder(handle_unknown='ignore', drop='first')
+                )
+        full_pipeline = make_column_transformer(
+                (num_pipeline, num_cols),
+                (cat_pipeline, cat_cols),
+            )
+        return full_pipeline
