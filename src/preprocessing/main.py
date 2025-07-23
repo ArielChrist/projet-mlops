@@ -35,7 +35,6 @@ class DataPreprocessor:
         self.random_state = random_state
         
 
-
     def split_data(self) -> list:
         """
         Divise les données en ensembles d'entraînement et de test.

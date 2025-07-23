@@ -1,2 +1,3 @@
 name: LinearRegression
 tol: 1e-06
+save_path: ../models

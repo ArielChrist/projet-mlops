@@ -1,5 +1,5 @@
-import sys
 import hydra
+import joblib
 from omegaconf import DictConfig
 import numpy as np
 import pandas as pd
@@ -9,7 +9,12 @@ from lightgbm import LGBMRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import accuracy_score, mean_squared_error
 import matplotlib.pyplot
-from .preprocessing import DataPreprocessor 
+
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from preprocessing import DataPreprocessor 
 
 
 import logging
@@ -66,8 +71,19 @@ def main(cfg: DictConfig):
     y_pred = model.predict(X_test_transform)
     mse = mean_squared_error(y_test, y_pred)
     rmse = mse ** 0.5
-    print(f"Resultats:")
-    print(f"  RMSE: {rmse:.2f}")
+    logger.info("Resultats:")
+    logger.info(f"RMSE: {rmse:.2f}")
+
+    logger.info("Enregistrement du modele")
+    model_path = os.path.join(cfg.model.save_path, cfg.model.name + '.joblib')
+    joblib.dump(model, model_path)
+    logger.info(f"Modele enregistre {model_path}")
+
+
+    pipeline_path = os.path.join(cfg.model.save_path, 'pipeline.joblib')
+    joblib.dump(pipeline, pipeline_path)
+    logger.info(f"Pipeline enregistre {pipeline_path}")
+
 
     logger.warning("fin du programme")
 
