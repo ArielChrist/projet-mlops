@@ -2,8 +2,8 @@ from pydantic import BaseModel
 
 class features(BaseModel):
       date: str
-      bedrooms: int
-      bathrooms: int
+      bedrooms: float
+      bathrooms: float
       sqft_living: float
       sqft_lot: float
       floors: float

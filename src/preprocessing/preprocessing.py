@@ -1,7 +1,11 @@
-import pandas as pd
 import numpy as np
-from sklearn.preprocessing import StandardScaler, OneHotEncoder, make_column_transformer, make_pipeline
+import pandas as pd
+import seaborn as sns
 from sklearn.model_selection import train_test_split
+from sklearn.impute import SimpleImputer
+from sklearn.compose import make_column_transformer
+from sklearn.pipeline import make_pipeline
+from sklearn.preprocessing import StandardScaler, OneHotEncoder
 
 class DataPreprocessor:
     """

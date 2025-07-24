@@ -1,3 +1,3 @@
-path: ./data/data.csv
-target_column: price
-exclude_columns: ['country']
+path: '../../data/data.csv'
+target_column: 'price'
+exclude_columns: ['country', 'date']

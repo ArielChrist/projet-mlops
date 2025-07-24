@@ -8,26 +8,21 @@ from sklearn.model_selection import GridSearchCV, cross_val_score
 from lightgbm import LGBMRegressor
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import accuracy_score, mean_squared_error
-import matplotlib.pyplot
-
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from preprocessing import DataPreprocessor 
-
-
 import logging
 import logging.config
 import yaml
 import os
 
+import sys
+import os
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
+from preprocessing.preprocessing import DataPreprocessor 
+
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'logger')))
 from filters import InfoOnlyFilter
 
-# Charger la configuration YAML
-
-with open(os.path.join(os.path.dirname(__file__),'logging_config.yaml'), 'r') as f:
+with open(os.path.join(os.path.dirname(__file__), '..', 'logger', 'logging_config.yaml'), 'r') as f:
     config = yaml.safe_load(f)
     logging.config.dictConfig(config)
 
@@ -37,13 +32,13 @@ def main(cfg: DictConfig):
     logger = logging.getLogger('app_logger')
     logger.info("Démarrage du programme")
 
-    print("Configuration utilisees")
-    print(cfg)
+    logger.info("Configuration utilisees")
+    logger.info(cfg)
 
     logger.info("creation de la classe DataPreprocessor")
     logger.info("Chargement des données")
     preprocessing = DataPreprocessor(
-        df=(cfg.data.path),
+        df=pd.read_csv(cfg.data.path),
         target_column=cfg.data.target_column,
         exclude_columns=cfg.data.exclude_columns,
         test_size=1 - cfg.train.split_ratio,
@@ -66,7 +61,7 @@ def main(cfg: DictConfig):
     logger.info(f"Donnees X_train_transform de taille {X_train_transform.shape} prete a l'utilisation")
 
     logger.info("Entraînement du modèle")
-    model = cfg.model.name(cfg.model.tol)
+    model = f"{cfg.model.name}"()
     model.fit(X_train_transform, y_train)
     y_pred = model.predict(X_test_transform)
     mse = mean_squared_error(y_test, y_pred)
@@ -75,14 +70,14 @@ def main(cfg: DictConfig):
     logger.info(f"RMSE: {rmse:.2f}")
 
     logger.info("Enregistrement du modele")
-    model_path = os.path.join(cfg.model.save_path, cfg.model.name + '.joblib')
+    model_path = os.path.join(cfg.model.name + '.joblib')
     joblib.dump(model, model_path)
-    logger.info(f"Modele enregistre {model_path}")
+    logger.info(f"Modele enregistre dans {model_path}")
 
 
-    pipeline_path = os.path.join(cfg.model.save_path, 'pipeline.joblib')
+    pipeline_path = os.path.join('pipeline.joblib')
     joblib.dump(pipeline, pipeline_path)
-    logger.info(f"Pipeline enregistre {pipeline_path}")
+    logger.info(f"Pipeline enregistre dans {pipeline_path}")
 
 
     logger.warning("fin du programme")

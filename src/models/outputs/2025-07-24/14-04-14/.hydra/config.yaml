@@ -1,0 +1,12 @@
+model:
+  name: LinearRegression
+  save_path: models
+data:
+  path: ../../data/data.csv
+  target_column: price
+  exclude_columns:
+  - country
+  - date
+train:
+  split_ratio: 0.8
+  random_state: 42

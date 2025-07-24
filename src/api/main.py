@@ -16,8 +16,8 @@ app = FastAPI(
 )
 
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '../../models/model.joblib')
-PIPELINE_PATH = os.path.join(os.path.dirname(__file__), '../../models/pipeline.joblib')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '../models/LinearRegression.joblib')
+PIPELINE_PATH = os.path.join(os.path.dirname(__file__), '../models/pipeline.joblib')
 
 
 try:
@@ -46,13 +46,13 @@ def prediction(input_data: features):
         raise HTTPException(status_code=500, detail="Le modèle ou le pipeline n'est pas chargé")
     
     try:
-        input_df = pd.DataFrame([input_data.features])
+        input_df = pd.DataFrame([input_data.dict()])
         
         processed_data = pipeline.transform(input_df)
         
         prediction = model.predict(processed_data)[0]
         
-        return Target(prediction=float(prediction))
+        return Target(price=float(prediction))
     
     except Exception as e:
         raise HTTPException(status_code=400, detail=f"Erreur lors de la prédiction: {str(e)}")

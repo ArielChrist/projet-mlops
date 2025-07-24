@@ -1,0 +1,122 @@
+2025-07-24 13:50:36 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:50:36 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:50:36 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': './data/data.csv', 'target_column': 'price', 'exclude_columns': ['country']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:50:36 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:50:36 - app_logger - INFO - Chargement des données
+2025-07-24 13:50:36 - app_logger - INFO - Separation des données
+2025-07-24 13:53:06 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:53:06 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:53:06 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': './data/data.csv', 'target_column': 'price', 'exclude_columns': ['country']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:53:06 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:53:06 - app_logger - INFO - Chargement des données
+2025-07-24 13:53:06 - app_logger - INFO - Separation des données
+2025-07-24 13:54:17 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:54:17 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:54:17 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': './data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:54:17 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:54:17 - app_logger - INFO - Chargement des données
+2025-07-24 13:54:17 - app_logger - INFO - Separation des données
+2025-07-24 13:55:21 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:55:21 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:55:21 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': './data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:55:21 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:55:21 - app_logger - INFO - Chargement des données
+2025-07-24 13:55:21 - app_logger - INFO - Separation des données
+2025-07-24 13:56:06 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:56:06 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:56:06 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': './data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:56:06 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:56:06 - app_logger - INFO - Chargement des données
+2025-07-24 13:56:06 - app_logger - INFO - Separation des données
+2025-07-24 13:57:46 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:57:46 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:57:46 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': './data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:57:46 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:57:46 - app_logger - INFO - Chargement des données
+2025-07-24 13:59:03 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:59:03 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:59:03 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': '../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:59:03 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:59:03 - app_logger - INFO - Chargement des données
+2025-07-24 13:59:28 - app_logger - INFO - Démarrage du programme
+2025-07-24 13:59:28 - app_logger - INFO - Configuration utilisees
+2025-07-24 13:59:28 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'tol': 1e-06, 'save_path': '../models'}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 13:59:28 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 13:59:28 - app_logger - INFO - Chargement des données
+2025-07-24 13:59:28 - app_logger - INFO - Separation des données
+2025-07-24 13:59:28 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-24 13:59:28 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-24 13:59:28 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-24 13:59:28 - app_logger - INFO - Entraînement du modèle
+2025-07-24 14:01:50 - app_logger - INFO - Démarrage du programme
+2025-07-24 14:01:50 - app_logger - INFO - Configuration utilisees
+2025-07-24 14:01:50 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'save_path': 'models'}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 14:01:50 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 14:01:50 - app_logger - INFO - Chargement des données
+2025-07-24 14:01:50 - app_logger - INFO - Separation des données
+2025-07-24 14:01:50 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-24 14:01:50 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-24 14:01:50 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-24 14:01:50 - app_logger - INFO - Entraînement du modèle
+2025-07-24 14:04:14 - app_logger - INFO - Démarrage du programme
+2025-07-24 14:04:14 - app_logger - INFO - Configuration utilisees
+2025-07-24 14:04:14 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'save_path': 'models'}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 14:04:14 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 14:04:14 - app_logger - INFO - Chargement des données
+2025-07-24 14:04:14 - app_logger - INFO - Separation des données
+2025-07-24 14:04:14 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-24 14:04:14 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-24 14:04:15 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-24 14:04:15 - app_logger - INFO - Entraînement du modèle
+2025-07-24 14:05:14 - app_logger - INFO - Démarrage du programme
+2025-07-24 14:05:14 - app_logger - INFO - Configuration utilisees
+2025-07-24 14:05:14 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'save_path': 'models'}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 14:05:14 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 14:05:14 - app_logger - INFO - Chargement des données
+2025-07-24 14:05:14 - app_logger - INFO - Separation des données
+2025-07-24 14:05:14 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-24 14:05:14 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-24 14:05:14 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-24 14:05:14 - app_logger - INFO - Entraînement du modèle
+2025-07-24 14:05:42 - app_logger - INFO - Démarrage du programme
+2025-07-24 14:05:42 - app_logger - INFO - Configuration utilisees
+2025-07-24 14:05:42 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'save_path': 'models'}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 14:05:42 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 14:05:42 - app_logger - INFO - Chargement des données
+2025-07-24 14:05:42 - app_logger - INFO - Separation des données
+2025-07-24 14:05:42 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-24 14:05:42 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-24 14:05:42 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-24 14:05:42 - app_logger - INFO - Entraînement du modèle
+2025-07-24 14:05:42 - app_logger - INFO - Resultats:
+2025-07-24 14:05:42 - app_logger - INFO - RMSE: 2141920.08
+2025-07-24 14:05:42 - app_logger - INFO - Enregistrement du modele
+2025-07-24 14:06:26 - app_logger - INFO - Démarrage du programme
+2025-07-24 14:06:26 - app_logger - INFO - Configuration utilisees
+2025-07-24 14:06:26 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'save_path': 'models'}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 14:06:26 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 14:06:26 - app_logger - INFO - Chargement des données
+2025-07-24 14:06:26 - app_logger - INFO - Separation des données
+2025-07-24 14:06:26 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-24 14:06:26 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-24 14:06:26 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-24 14:06:26 - app_logger - INFO - Entraînement du modèle
+2025-07-24 14:06:27 - app_logger - INFO - Resultats:
+2025-07-24 14:06:27 - app_logger - INFO - RMSE: 2141920.08
+2025-07-24 14:06:27 - app_logger - INFO - Enregistrement du modele
+2025-07-24 14:13:37 - app_logger - INFO - Démarrage du programme
+2025-07-24 14:13:37 - app_logger - INFO - Configuration utilisees
+2025-07-24 14:13:37 - app_logger - INFO - {'model': {'name': 'LinearRegression', 'save_path': 'models'}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-24 14:13:37 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-24 14:13:37 - app_logger - INFO - Chargement des données
+2025-07-24 14:13:37 - app_logger - INFO - Separation des données
+2025-07-24 14:13:37 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-24 14:13:37 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-24 14:13:37 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-24 14:13:37 - app_logger - INFO - Entraînement du modèle
+2025-07-24 14:13:37 - app_logger - INFO - Resultats:
+2025-07-24 14:13:37 - app_logger - INFO - RMSE: 2141920.08
+2025-07-24 14:13:37 - app_logger - INFO - Enregistrement du modele
+2025-07-24 14:13:37 - app_logger - INFO - Modele enregistre dans LinearRegression.joblib
+2025-07-24 14:13:38 - app_logger - INFO - Pipeline enregistre dans pipeline.joblib
+2025-07-24 14:13:38 - app_logger - WARNING - fin du programme

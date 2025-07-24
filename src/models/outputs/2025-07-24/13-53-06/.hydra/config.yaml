@@ -1,0 +1,12 @@
+model:
+  name: LinearRegression
+  tol: 1.0e-06
+  save_path: ../models
+data:
+  path: ./data/data.csv
+  target_column: price
+  exclude_columns:
+  - country
+train:
+  split_ratio: 0.8
+  random_state: 42
