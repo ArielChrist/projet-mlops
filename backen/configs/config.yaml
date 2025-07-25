@@ -1,4 +1,4 @@
 defaults:
-  - model: lr
+  - model: lightgbm
   - data: data
   - train: train

@@ -16,7 +16,7 @@ app = FastAPI(
 )
 
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '../models/LinearRegression.joblib')
+MODEL_PATH = os.path.join(os.path.dirname(__file__), '../models/LGBMRegressor.joblib')
 PIPELINE_PATH = os.path.join(os.path.dirname(__file__), '../models/pipeline.joblib')
 
 

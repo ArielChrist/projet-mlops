@@ -120,3 +120,29 @@
 2025-07-24 14:13:37 - app_logger - INFO - Modele enregistre dans LinearRegression.joblib
 2025-07-24 14:13:38 - app_logger - INFO - Pipeline enregistre dans pipeline.joblib
 2025-07-24 14:13:38 - app_logger - WARNING - fin du programme
+2025-07-25 13:56:42 - app_logger - INFO - Démarrage du programme
+2025-07-25 13:56:42 - app_logger - INFO - Configuration utilisees
+2025-07-25 13:56:42 - app_logger - INFO - {'model': {'name': 'LGBMRegressor', 'boosting_type': 'gbdt', 'learning_rate': 0.1, 'n_estimators': 100, 'num_leaves': 31, 'random_state': 10, 'verbosity': -1}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-25 13:56:42 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-25 13:56:42 - app_logger - INFO - Chargement des données
+2025-07-25 13:56:42 - app_logger - INFO - Separation des données
+2025-07-25 13:56:42 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-25 13:56:42 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-25 13:56:42 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-25 13:56:42 - app_logger - INFO - Entraînement du modèle
+2025-07-25 13:57:51 - app_logger - INFO - Démarrage du programme
+2025-07-25 13:57:51 - app_logger - INFO - Configuration utilisees
+2025-07-25 13:57:51 - app_logger - INFO - {'model': {'name': 'LGBMRegressor', 'boosting_type': 'gbdt', 'learning_rate': 0.1, 'n_estimators': 100, 'num_leaves': 31, 'random_state': 10, 'verbosity': -1}, 'data': {'path': '../../data/data.csv', 'target_column': 'price', 'exclude_columns': ['country', 'date']}, 'train': {'split_ratio': 0.8, 'random_state': 42}}
+2025-07-25 13:57:51 - app_logger - INFO - creation de la classe DataPreprocessor
+2025-07-25 13:57:51 - app_logger - INFO - Chargement des données
+2025-07-25 13:57:51 - app_logger - INFO - Separation des données
+2025-07-25 13:57:51 - app_logger - INFO - Création du pipeline de prétraitement
+2025-07-25 13:57:51 - app_logger - INFO - Encodage des variables catégorielles et standardisation des données
+2025-07-25 13:57:51 - app_logger - INFO - Donnees X_train_transform de taille (3680, 3765) prete a l'utilisation
+2025-07-25 13:57:51 - app_logger - INFO - Entraînement du modèle
+2025-07-25 13:57:57 - app_logger - INFO - Resultats:
+2025-07-25 13:57:57 - app_logger - INFO - RMSE: 981802.83
+2025-07-25 13:57:57 - app_logger - INFO - Enregistrement du modele
+2025-07-25 13:57:57 - app_logger - INFO - Modele enregistre dans LGBMRegressor.joblib
+2025-07-25 13:57:57 - app_logger - INFO - Pipeline enregistre dans pipeline.joblib
+2025-07-25 13:57:57 - app_logger - WARNING - fin du programme

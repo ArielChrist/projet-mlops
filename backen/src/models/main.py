@@ -3,7 +3,6 @@ import joblib
 from omegaconf import DictConfig
 import numpy as np
 import pandas as pd
-import seaborn as sns
 from sklearn.model_selection import GridSearchCV, cross_val_score
 from lightgbm import LGBMRegressor
 from sklearn.linear_model import LinearRegression
@@ -61,7 +60,7 @@ def main(cfg: DictConfig):
     logger.info(f"Donnees X_train_transform de taille {X_train_transform.shape} prete a l'utilisation")
 
     logger.info("Entraînement du modèle")
-    model = f"{cfg.model.name}"()
+    model = LGBMRegressor(boosting_type = cfg.model.boosting_type, learning_rate = cfg.model.learning_rate, n_estimators = cfg.model.n_estimators, num_leaves = cfg.model.num_leaves, random_state = cfg.model.random_state, verbosity = cfg.model.verbosity)
     model.fit(X_train_transform, y_train)
     y_pred = model.predict(X_test_transform)
     mse = mean_squared_error(y_test, y_pred)
