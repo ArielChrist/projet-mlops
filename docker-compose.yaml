@@ -3,7 +3,7 @@ version: '3.8'
 services:
   backend:
     build:
-      context: ./api
+      context: ./backen
     ports:
       - "8000:8000"
 
@@ -13,6 +13,6 @@ services:
     ports:
       - "3000:80"
     environment:
-      - REACT_APP_API_URL=http://backend:8000
+      - http://backend:8000
     depends_on:
       - backend
