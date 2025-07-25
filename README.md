@@ -1,6 +1,6 @@
 ### Titre : Projet Mlops
 
-## Auteur : Ariel Christ Austhen NGATO NDAMOKOZIADE
+### Auteur : Ariel Christ Austhen NGATO NDAMOKOZIADE
 
 ## Version : 0.1.0
 
